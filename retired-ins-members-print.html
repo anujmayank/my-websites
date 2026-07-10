@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RETIRED INS EMPLOYEE'S ASSN — Muzaffarpur Division — Member Mobile Numbers</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 10mm 10mm;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 10pt;
+            line-height: 1.25;
+            color: #000;
+            background: #fff;
+            margin: 0;
+            padding: 10mm;
+        }
+
+        .sheet {
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+
+        .print-page {
+            margin: 0 auto 12mm;
+        }
+
+        .print-page:last-child {
+            margin-bottom: 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3mm;
+        }
+
+        header h1 {
+            font-size: 13pt;
+            font-weight: bold;
+            margin: 0 0 1mm;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+
+        header h2 {
+            font-size: 10.5pt;
+            font-weight: bold;
+            margin: 0;
+            text-decoration: underline;
+        }
+
+        .page-range {
+            margin-top: 1mm;
+            font-size: 8.5pt;
+            font-weight: normal;
+            text-decoration: none;
+            color: #333;
+        }
+
+        table.members {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        table.members thead {
+            display: table-header-group;
+        }
+
+        table.members thead th {
+            font-size: 8.5pt;
+            font-weight: bold;
+            text-align: center;
+            padding: 1.2mm 1mm;
+            border: 1px solid #000;
+            background: #f0f0f0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        table.members tbody td {
+            padding: 1.1mm 1mm;
+            border: 1px solid #000;
+            vertical-align: top;
+            word-wrap: break-word;
+            font-size: 9.5pt;
+            line-height: 1.15;
+        }
+
+        table.members .col-sl {
+            width: 6%;
+            text-align: center;
+        }
+
+        table.members .col-name {
+            width: 19%;
+        }
+
+        table.members .col-mobile {
+            width: 10%;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        table.members tbody tr:nth-child(even) td {
+            background: #fafafa;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .divider {
+            border-left: 2px solid #000 !important;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .print-page {
+                margin: 0;
+                page-break-after: always;
+                break-after: page;
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .print-page:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+        }
+
+        @media screen {
+            .print-hint {
+                text-align: center;
+                margin-bottom: 8px;
+                font-family: system-ui, sans-serif;
+                font-size: 12px;
+                color: #555;
+            }
+
+            .print-hint button {
+                font-size: 14px;
+                padding: 8px 16px;
+                cursor: pointer;
+            }
+
+            .print-page {
+                border: 1px dashed #ccc;
+                padding: 8mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p class="print-hint no-print">
+        <button type="button" onclick="window.print()">Print</button>
+        — Each page lists sequential serial numbers only (e.g. 1–64, then 65–128).
+    </p>
+
+    <div id="pages"></div>
+
+    <script>
+        const members = [
+            { sl: 1, name: "Nand Kishore Thakur", mobile: "9334078576" },
+            { sl: 2, name: "Avinash Choubey", mobile: "9835278565" },
+            { sl: 3, name: "Y.P.Choudhary Kamal", mobile: "7250405690" },
+            { sl: 4, name: "S.N.Jha", mobile: "9835496933" },
+            { sl: 5, name: "R.B.Sahani", mobile: "9472100009" },
+            { sl: 6, name: "Bipin Bihari Verma", mobile: "9430289928" },
+            { sl: 7, name: "Asit Kumar Chatterjee", mobile: "9430580328" },
+            { sl: 8, name: "Uma Shankar Prasad Sinha", mobile: "8084039714" },
+            { sl: 9, name: "Sushil Kumar Singh", mobile: "8077513139" },
+            { sl: 10, name: "Surendra Kumar", mobile: "7765071200" },
+            { sl: 11, name: "Ram Bahadur Choudhary", mobile: "9386492899" },
+            { sl: 12, name: "Kashi Nath Jha", mobile: "9471450413" },
+            { sl: 13, name: "Krishna Mohan Mishra", mobile: "9835280502" },
+            { sl: 14, name: "Rai Vijay Kumar Sinha", mobile: "9931031660" },
+            { sl: 15, name: "Syed Haider Hussain", mobile: "9939235008" },
+            { sl: 16, name: "Birendra Choudhary", mobile: "7367045185" },
+            { sl: 17, name: "Upendra Kumar", mobile: "9955028092" },
+            { sl: 18, name: "Ram Nandan Singh", mobile: "8294848211" },
+            { sl: 19, name: "Dayal Kumar Ghosh", mobile: "9801378689" },
+            { sl: 20, name: "Kishori Sah", mobile: "9631574651" },
+            { sl: 21, name: "Pawan Kumar Sharma", mobile: "9834448963" },
+            { sl: 22, name: "Pitamber Prasad Sinha", mobile: "8051663422" },
+            { sl: 23, name: "Arbindo Mukherjee", mobile: "9874929766" },
+            { sl: 24, name: "Raghuvar Dayal Singh", mobile: "9135766826" },
+            { sl: 25, name: "Hanuman Prasad Singh", mobile: "9471027338" },
+            { sl: 26, name: "Gautam Ram", mobile: "9973303027" },
+            { sl: 27, name: "Raman Kumar Shrivastava", mobile: "9939196342" },
+            { sl: 28, name: "Laxmeshwar Thakur", mobile: "9431300375" },
+            { sl: 29, name: "Amar Nath Choudhary", mobile: "8294783078" },
+            { sl: 30, name: "Raj Kishore Pandey", mobile: "8002048662" },
+            { sl: 31, name: "Shambhu Nath Jha", mobile: "9162296701" },
+            { sl: 32, name: "Raj Mohan Thakur", mobile: "9304186918" },
+            { sl: 33, name: "Arun Kumar Thakur", mobile: "9431013979" },
+            { sl: 34, name: "Krishna Kumar Sinha", mobile: "9934239323" },
+            { sl: 35, name: "Baidyanath Bhakta", mobile: "9430556047" },
+            { sl: 36, name: "Bhola Prasad Singh", mobile: "9835820727" },
+            { sl: 37, name: "Raja Ram Mohan Roy", mobile: "9931669725" },
+            { sl: 38, name: "Shivendra Kumar", mobile: "9835074888" },
+            { sl: 39, name: "Vijay Kumar Gupta", mobile: "9431092544" },
+            { sl: 40, name: "Om Prakash", mobile: "9431670921" },
+            { sl: 41, name: "Prakash Jha", mobile: "9431220068" },
+            { sl: 42, name: "Asharfi Lal", mobile: "9934923025" },
+            { sl: 43, name: "Harendra Kumar Dwivedi", mobile: "7039977267" },
+            { sl: 44, name: "Ranjit Manjhi", mobile: "9471469730" },
+            { sl: 45, name: "Jagannath Roy", mobile: "9939736081" },
+            { sl: 46, name: "Baidyanath Singh", mobile: "9430051906" },
+            { sl: 47, name: "Sajawal Singh", mobile: "9934240544" },
+            { sl: 48, name: "Shatrughna Pandeya", mobile: "8002835297" },
+            { sl: 49, name: "Shambhu Prasad Verma", mobile: "9934812497" },
+            { sl: 50, name: "Laxman Lal Das", mobile: "8757874110" },
+            { sl: 51, name: "Mohan Prasad Sinha", mobile: "9835263116" },
+            { sl: 52, name: "Devanand Prasad Gupta", mobile: "9431238082" },
+            { sl: 53, name: "Syed Ali", mobile: "9304593086" },
+            { sl: 54, name: "Mahesh Kumar Saxena", mobile: "9570514020" },
+            { sl: 55, name: "Bijay Kumar Sinha", mobile: "9431266420" },
+            { sl: 56, name: "Umanath Das", mobile: "7001851400" },
+            { sl: 57, name: "Laxmi Devi", mobile: "9693525707" },
+            { sl: 58, name: "Gauri Shankar Prasad Singh", mobile: "7783097228" },
+            { sl: 59, name: "Mahesh Jha", mobile: "9430252583" },
+            { sl: 60, name: "Chittaranjan Singh", mobile: "7201420514" },
+            { sl: 61, name: "Nagendra Roy", mobile: "7739693591" },
+            { sl: 62, name: "Anil Kumar Mishra", mobile: "9931787525" },
+            { sl: 63, name: "Suresh Bhagat", mobile: "9905067472" },
+            { sl: 64, name: "Ram Darshan Singh", mobile: "9973752559" },
+            { sl: 65, name: "Laxman Ram", mobile: "9471451456" },
+            { sl: 66, name: "Jawahar Lal Ram", mobile: "8986018682" },
+            { sl: 67, name: "Ram Nandan Mukhia", mobile: "9525646096" },
+            { sl: 68, name: "Chiranjeevi Jha", mobile: "9471204307" },
+            { sl: 69, name: "Gurudeo Prasad Singh", mobile: "9431266560" },
+            { sl: 70, name: "Satish Kumar", mobile: "9334699651" },
+            { sl: 71, name: "Gyan Prakash", mobile: "9835853589" },
+            { sl: 72, name: "Umesh Prasad Singh", mobile: "9939282421" },
+            { sl: 73, name: "Mahesh Thakur", mobile: "8678064859" },
+            { sl: 74, name: "Ashish Kumar Amin", mobile: "9431086714" },
+            { sl: 75, name: "Jag Mohan Prasad", mobile: "7488422012" },
+            { sl: 76, name: "Satish Kumar Minj", mobile: "9431241330" },
+            { sl: 77, name: "Sachhidanand Singh", mobile: "9631065068" },
+            { sl: 78, name: "Sudhir Pd.Shahi", mobile: "9430579579" },
+            { sl: 79, name: "Amresh Chandra", mobile: "9431465960" },
+            { sl: 80, name: "Basant Kumar", mobile: "9431260295" },
+            { sl: 81, name: "Rajni Kant Jha", mobile: "9471373729" },
+            { sl: 82, name: "Anil Kumar Das", mobile: "9431032441" },
+            { sl: 83, name: "Sita Ram Jha", mobile: "7631270707" },
+            { sl: 84, name: "Ratneshwar Upadhyay", mobile: "9661990206" },
+            { sl: 85, name: "Sharmila Chatterjee", mobile: "9939719559" },
+            { sl: 86, name: "Krishna Kumar Shrivastava", mobile: "9835205426" },
+            { sl: 87, name: "Vinay Kumar", mobile: "9431241144" },
+            { sl: 88, name: "Narendra Kumar Sharma", mobile: "9631405024" },
+            { sl: 89, name: "Baidyanath Ram", mobile: "9431691767" },
+            { sl: 90, name: "Awadhesh Kumar Yadav", mobile: "9431070585" },
+            { sl: 91, name: "Prabhat Kumar Santoshi", mobile: "9835461999" },
+            { sl: 92, name: "Awadhesh Kumar", mobile: "9431032416" },
+            { sl: 93, name: "Awadhesh Kumar Jha", mobile: "7762973861" },
+            { sl: 94, name: "Anil Kumar Thakur", mobile: "9835494193" },
+            { sl: 95, name: "Suresh Prasad Singh", mobile: "9431429287" },
+            { sl: 96, name: "Subodh Kishore Jha", mobile: "9471295107" },
+            { sl: 97, name: "Kamdeo Jha", mobile: "7667292151" },
+            { sl: 98, name: "Bhairaw Prasad", mobile: "9934240033" },
+            { sl: 99, name: "Sunil Kumar Thakur", mobile: "9801410005" },
+            { sl: 100, name: "Ashok Kumar Giri", mobile: "9470703813" },
+            { sl: 101, name: "Ashok Kumar Jha", mobile: "7004819053" },
+            { sl: 102, name: "Uma Kant Gupta", mobile: "9431067178" },
+            { sl: 103, name: "Anjani Kumar Verma", mobile: "7991180059" },
+            { sl: 104, name: "Ram Nath Singh", mobile: "9973452113" },
+            { sl: 105, name: "Diwakar Pratap Shahi", mobile: "9431248718" },
+            { sl: 106, name: "Kashi Nath Jha", mobile: "8210560923" },
+            { sl: 107, name: "Vinay Kumar Choudhary", mobile: "9431443130" },
+            { sl: 108, name: "Md.Suffian", mobile: "9430224417" },
+            { sl: 109, name: "Nagendra Ram", mobile: "9341604068" },
+            { sl: 110, name: "Rajendra Paswan", mobile: "9123193078" },
+            { sl: 111, name: "Anil Kumar Shrivastava", mobile: "9431264469" },
+            { sl: 112, name: "Rakesh Kumar", mobile: "8987215204" },
+            { sl: 113, name: "Ram Das Ram", mobile: "9973657559" },
+            { sl: 114, name: "Upendra Prasad", mobile: "9470074485" },
+            { sl: 115, name: "Shiv Narayan Mandal", mobile: "9431403324" },
+            { sl: 116, name: "Vijay Kumar", mobile: "9431404512" },
+            { sl: 117, name: "Bipin Kumar Shahi", mobile: "9931031493" },
+            { sl: 118, name: "Harish Kumar", mobile: "6202222144" },
+            { sl: 119, name: "Rajiv Ranjan Asthana", mobile: "9431048667" },
+            { sl: 120, name: "Vijay Kumar", mobile: "8789123911" },
+            { sl: 121, name: "Kamal Kr.Bhasin", mobile: "8092030886" },
+            { sl: 122, name: "Amit Prakash Verma", mobile: "7717796975" },
+            { sl: 123, name: "Vijay Kumar Dwivedi", mobile: "7033488102" },
+            { sl: 124, name: "Ram Pravesh Bhagat", mobile: "7250164043" },
+            { sl: 125, name: "Binod Kumar Sinha", mobile: "9430210860" },
+            { sl: 126, name: "Prabesh Kumar Jha", mobile: "9934634550" },
+            { sl: 127, name: "Girindra Mohan", mobile: "9934205960" },
+            { sl: 128, name: "Sanjeev Kumar Sinha", mobile: "9430061730" },
+            { sl: 129, name: "Pappu", mobile: "9709424616" },
+            { sl: 130, name: "Rakesh Kumar", mobile: "9234779908" },
+            { sl: 131, name: "Upendra Nath Gupta", mobile: "9431240362" },
+            { sl: 132, name: "Raghuvar Mahto", mobile: "9801740050" },
+            { sl: 133, name: "Manish Kumar Verma", mobile: "9430014411" },
+            { sl: 134, name: "Rakesh Kumar", mobile: "9931477450" },
+            { sl: 135, name: "Shailendra Kumar", mobile: "9431240362" },
+            { sl: 136, name: "Sangeeta", mobile: "7992219737" },
+            { sl: 137, name: "Rajendra Paswan", mobile: "9931668675" },
+            { sl: 138, name: "Mirtunjay Tiwary", mobile: "9431239053" },
+            { sl: 139, name: "Akhilesh Kumar", mobile: "9835061901" },
+            { sl: 140, name: "Madhav Jha", mobile: "8319179851" },
+            { sl: 141, name: "Vijay Kumar Ojha", mobile: "9430218030" },
+            { sl: 142, name: "Madhav Kumar", mobile: "9431294747" },
+            { sl: 143, name: "Manoj Kumar", mobile: "9431652599" },
+            { sl: 144, name: "Navin Kumar Sinha", mobile: "9934275053" },
+            { sl: 145, name: "Awadhesh Kumar", mobile: "9546053215" },
+            { sl: 146, name: "Saroj Kumar", mobile: "9852690544" },
+            { sl: 147, name: "Shiw Kumar Sah", mobile: "9708054170" },
+            { sl: 148, name: "Md.Jawaid Akhter", mobile: "9852384460" },
+            { sl: 149, name: "Deepesh Kumar", mobile: "9934438808" },
+            { sl: 150, name: "Md.Inamullah", mobile: "7739971386" },
+            { sl: 151, name: "Devendra Singh", mobile: "8084135593" },
+            { sl: 152, name: "Anant Jha", mobile: "8709291979" },
+            { sl: 153, name: "Sayeed Ahmad", mobile: "9006682785" },
+            { sl: 154, name: "Vimal Kumar", mobile: "9835223522" },
+            { sl: 155, name: "Satya Narayan Mahto", mobile: "9471089506" },
+            { sl: 156, name: "Vinod Kamti", mobile: "9905203747" },
+            { sl: 157, name: "Sunil Kumar Jha", mobile: "9973015487" },
+            { sl: 158, name: "Md.Zafruddin Ansari", mobile: "9431253144" },
+            { sl: 159, name: "Navin Chandra Roy", mobile: "9430206558" },
+            { sl: 160, name: "Anil Verma", mobile: "9431233627" },
+            { sl: 161, name: "Rajeev Ranjan Jha", mobile: "8809880021" },
+            { sl: 162, name: "Ishwar Chandra Pandey", mobile: "8271769018" },
+            { sl: 163, name: "Manoj Kumar Das", mobile: "9430584459" },
+            { sl: 164, name: "Ganga Safi", mobile: "6200630540" },
+            { sl: 165, name: "Syed Faheem Haider", mobile: "9955564148" },
+            { sl: 166, name: "Bibha Kumari", mobile: "9470378584" },
+            { sl: 167, name: "Sanniwas Sharma", mobile: "9431203587" },
+            { sl: 168, name: "Ashok Kumar, Bagaha", mobile: "8210788332" },
+            { sl: 169, name: "Parsuram Thakur", mobile: "7739974858" },
+            { sl: 170, name: "Anuj Kumar", mobile: "9430614525" },
+            { sl: 171, name: "Dinesh Jaiswal", mobile: "9431286052" },
+            { sl: 172, name: "Pulak Dey", mobile: "8709917787" },
+            { sl: 173, name: "Mukesh Kumar", mobile: "9431360170" },
+            { sl: 174, name: "Parmeshwar Purbey", mobile: "9431080501" },
+            { sl: 175, name: "C.S.P.Jaiswal", mobile: "9835240868" },
+            { sl: 176, name: "Santosh Kumar", mobile: "9199642236" },
+            { sl: 177, name: "Mahesh Ram", mobile: "7903491328" },
+            { sl: 178, name: "Pramod Kumar", mobile: "9973550202" },
+            { sl: 179, name: "Kumar Ramesh", mobile: "9931476281" },
+            { sl: 180, name: "Namo Narayan Jha", mobile: "7482064232" },
+            { sl: 181, name: "J.L.Arya", mobile: "9471485027" },
+            { sl: 182, name: "Chandeshwar Sahu", mobile: "9065656151" },
+            { sl: 183, name: "Eqbal Ahmad", mobile: "9431067292" },
+            { sl: 184, name: "Md.Shamim Alam", mobile: "9431460709" },
+            { sl: 185, name: "Kamini Kumari", mobile: "9471669117" },
+            { sl: 186, name: "Smt.Parwati Devi", mobile: "9525587472" },
+            { sl: 187, name: "Arvind Kumar", mobile: "9162310346" },
+            { sl: 188, name: "H.K.Choubey", mobile: "9354859450" },
+            { sl: 189, name: "Gyan Prakash", mobile: "9835853589" },
+        ];
+
+        function escapeHtml(text) {
+            return String(text)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;");
+        }
+
+        /** Three sheets — pages 1–2 capped at 31 rows (62 members) so nothing spills; page 3 takes the rest. */
+        function chunkMembersForPrint(list) {
+            const pageSizes = [62, 62];
+            const chunks = [];
+            let index = 0;
+
+            for (const size of pageSizes) {
+                chunks.push(list.slice(index, index + size));
+                index += size;
+            }
+
+            chunks.push(list.slice(index));
+            return chunks;
+        }
+
+        function buildTableRows(pageMembers) {
+            const half = Math.ceil(pageMembers.length / 2);
+            let rowsHtml = "";
+
+            for (let i = 0; i < half; i++) {
+                const left = pageMembers[i];
+                const right = pageMembers[i + half];
+
+                rowsHtml += `
+                    <tr>
+                        <td class="col-sl">${left.sl}</td>
+                        <td class="col-name">${escapeHtml(left.name)}</td>
+                        <td class="col-mobile">${escapeHtml(left.mobile)}</td>
+                        <td class="col-sl divider">${right ? right.sl : ""}</td>
+                        <td class="col-name">${right ? escapeHtml(right.name) : ""}</td>
+                        <td class="col-mobile">${right ? escapeHtml(right.mobile) : ""}</td>
+                    </tr>
+                `;
+            }
+
+            return rowsHtml;
+        }
+
+        function renderPages() {
+            const pagesRoot = document.getElementById("pages");
+            const pageChunks = chunkMembersForPrint(members);
+
+            pageChunks.forEach((pageMembers, pageIndex) => {
+                const firstSl = pageMembers[0].sl;
+                const lastSl = pageMembers[pageMembers.length - 1].sl;
+                const pageNumber = pageIndex + 1;
+
+                const page = document.createElement("section");
+                page.className = "print-page sheet";
+                page.innerHTML = `
+                    <header>
+                        <h1>RETIRED INS EMPLOYEE'S ASSN<br>MUZAFFARPUR DIVISION.</h1>
+                        <h2>Mobile number of members.</h2>
+                        
+                    </header>
+                    <table class="members" aria-label="Member mobile numbers, page ${pageNumber}">
+                        <thead>
+                            <tr>
+                                <th class="col-sl">Sl.</th>
+                                <th class="col-name">Name</th>
+                                <th class="col-mobile">Mobile No.</th>
+                                <th class="col-sl divider">Sl.</th>
+                                <th class="col-name">Name</th>
+                                <th class="col-mobile">Mobile No.</th>
+                            </tr>
+                        </thead>
+                        <tbody>${buildTableRows(pageMembers)}</tbody>
+                    </table>
+                `;
+
+                pagesRoot.appendChild(page);
+            });
+        }
+
+        renderPages();
+    </script>
+</body>
+</html>
