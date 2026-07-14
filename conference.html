@@ -21,8 +21,8 @@
             background: #fff;
             margin: 0;
             padding: 10mm;
-            letter-spacing: 0.05em;
-            line-height: 2.20;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
             font-weight: 500;
         }
 
@@ -31,42 +31,130 @@
             margin: 0 auto;
         }
 
-        header {
-            margin-bottom: 6mm;
+        .letterhead {
             text-align: center;
+            margin-bottom: 4mm;
         }
 
-        header h1 {
+        .letterhead h1 {
             font-size: 14pt;
             font-weight: bold;
-            margin: 0 0 2mm;
-            letter-spacing: 0.02em;
+            margin: 0 0 1mm;
             line-height: 1.3;
         }
 
-        header h2 {
-            font-size: 11pt;
+        .letterhead h2 {
+            font-size: 12pt;
             font-weight: bold;
-            margin: 0;
+            margin: 0 0 2mm;
+        }
+
+        .letterhead .affiliation {
+            font-size: 10pt;
+            font-style: italic;
+            margin: 0 0 4mm;
+        }
+
+        .letterhead-contacts {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 3mm;
+            font-size: 10pt;
+            text-align: center;
+            margin-bottom: 4mm;
+        }
+
+        .letterhead-contacts .role {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 1mm;
+        }
+
+        .letterhead-rule {
+            border: none;
+            border-top: 1px solid #000;
+            margin: 0 0 6mm;
+        }
+
+        .letter-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8mm;
+            margin-bottom: 6mm;
+        }
+
+        .letter-to {
+            flex: 1;
+        }
+
+        .letter-date {
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .salutation {
+            margin: 0 0 4mm;
+        }
+
+        .subject {
+            margin: 0 0 4mm;
         }
 
         .intro {
-            margin-bottom: 6mm;
+            margin: 0 0 4mm;
             text-align: justify;
         }
 
         ol.officers {
-            margin: 0;
-            padding-left: 6mm;
+            margin: 0 0 6mm;
+            padding-left: 0;
+            list-style: none;
+            counter-reset: officer;
         }
 
         ol.officers li {
+            display: flex;
+            align-items: baseline;
             margin-bottom: 1mm;
+            counter-increment: officer;
         }
 
-        .signature {
-            margin-top: 10mm;
-            text-align: right;
+        ol.officers li::before {
+            content: counter(officer) ".";
+            flex: 0 0 7mm;
+            min-width: 7mm;
+        }
+
+        ol.officers .officer-name {
+            flex: 0 0 46mm;
+            min-width: 46mm;
+            white-space: nowrap;
+        }
+
+        ol.officers .officer-sep {
+            flex: 0 0 4mm;
+            min-width: 4mm;
+            text-align: center;
+        }
+
+        ol.officers .officer-post {
+            flex: 1;
+            white-space: nowrap;
+        }
+
+        .closing {
+            margin: 0 0 4mm;
+            text-align: justify;
+        }
+
+        .sign-off {
+            text-align: left;
+            line-height: 1;
+        }
+
+        .sign-off .signature-space {
+            height: 3mm;
         }
 
         @media print {
@@ -98,38 +186,77 @@
 </head>
 <body>
     <div class="sheet">
-        <header>
-            <h1>RETIRED INSURANCE EMPLOYEE'S ASSOCIATION</h1>
-            <h2>MUZAFFARPUR DIVISION</h2>
-        </header>
+        <div class="letterhead">
+            <h1>Retired Insurance Employee's Association</h1>
+            <h2>Muzaffarpur Division</h2>
+            <p class="affiliation">(Affiliated to All India Retired Insurance Employees Federation)</p>
+
+            <div class="letterhead-contacts">
+                <div>
+                    <div class="role">President</div>
+                    <div>Om Prakash</div>
+                    <div>9431670921</div>
+                </div>
+                <div>
+                    <div class="role">Secretary</div>
+                    <div>S Pandeya</div>
+                    <div>8002835297 / 9835262677</div>
+                </div>
+                <div>
+                    <div class="role">Treasurer</div>
+                    <div>Anjani Kumar Verma</div>
+                    <div>7991180059</div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="letterhead-rule">
+
+        <div class="letter-meta">
+            <div class="letter-to">
+                The Sr. Divisional Manager,<br>
+                LIC of India,<br>
+                Divisional Office, Muzaffarpur.
+            </div>
+            <div class="letter-date">Date: 15-06-2026</div>
+        </div>
+
+        <p class="salutation">Dear Sir,</p>
+
+        <p class="subject">Re: Introduction of Office Bearers of Retired Insurance Employee's Association</p>
 
         <p class="intro">
             The Biennial Conference of our organization Retired Insurance Employee's Association Muzaffarpur Division held on 4th July, 2026 and the following Office Bearers have been elected unanimously for the years 2026-27 and 2027-28.
         </p>
 
         <ol class="officers">
-            <li>Md. S. Ali, Patron</li>
-            <li>Om Prakash, President</li>
-            <li>Arvind Kumar, Working President</li>
-            <li>V.K.Gupta, Vice President</li>
-            <li>Sudhir Pd.Shahi, Vice President</li>
-            <li>Ashok Kumar, Vice President</li>
-            <li>Shatrughna Pandeya, General Secretary</li>
-            <li>A.K.Giri, Deputy General Secretary</li>
-            <li>Shivendra Kumar, Joint Secretary</li>
-            <li>U.K.Gupta, Joint Secretary</li>
-            <li>Ranjit Manjhi, Joint Secretary</li>
-            <li>S.N.Singh, Organising Secretary</li>
-            <li>Dinesh Kumar.Jaiswal, Organising Secretary</li>
-            <li>Anjani Kumar Verma, Treasurer</li>
-            <li>Rajeev Ranjan Asthana, Assistant Treasurer</li>
-            <li>Jagmohan Prasad, Executive Committee Member</li>
-            <li>Baidyanath Bhakta, Executive Committee Member</li>
-            <li>Chittaranjan Singh, Executive Committee Member</li>
-            <li>Bijay Kumar Sinha, Executive Committee Member</li>
+            <li><span class="officer-name">Md. S. Ali</span><span class="officer-sep">-</span><span class="officer-post">Patron</span></li>
+            <li><span class="officer-name">Om Prakash</span><span class="officer-sep">-</span><span class="officer-post">President</span></li>
+            <li><span class="officer-name">Arvind Kumar</span><span class="officer-sep">-</span><span class="officer-post">Working President</span></li>
+            <li><span class="officer-name">V.K.Gupta</span><span class="officer-sep">-</span><span class="officer-post">Vice President</span></li>
+            <li><span class="officer-name">Sudhir Pd.Shahi</span><span class="officer-sep">-</span><span class="officer-post">Vice President</span></li>
+            <li><span class="officer-name">Ashok Kumar</span><span class="officer-sep">-</span><span class="officer-post">Vice President</span></li>
+            <li><span class="officer-name">Shatrughna Pandeya</span><span class="officer-sep">-</span><span class="officer-post">General Secretary</span></li>
+            <li><span class="officer-name">A.K.Giri</span><span class="officer-sep">-</span><span class="officer-post">Deputy General Secretary</span></li>
+            <li><span class="officer-name">Shivendra Kumar</span><span class="officer-sep">-</span><span class="officer-post">Joint Secretary</span></li>
+            <li><span class="officer-name">U.K.Gupta</span><span class="officer-sep">-</span><span class="officer-post">Joint Secretary</span></li>
+            <li><span class="officer-name">Ranjit Manjhi</span><span class="officer-sep">-</span><span class="officer-post">Joint Secretary</span></li>
+            <li><span class="officer-name">S.N.Singh</span><span class="officer-sep">-</span><span class="officer-post">Organising Secretary</span></li>
+            <li><span class="officer-name">Dinesh Kumar.Jaiswal</span><span class="officer-sep">-</span><span class="officer-post">Organising Secretary</span></li>
+            <li><span class="officer-name">Anjani Kumar Verma</span><span class="officer-sep">-</span><span class="officer-post">Treasurer</span></li>
+            <li><span class="officer-name">Rajeev Ranjan Asthana</span><span class="officer-sep">-</span><span class="officer-post">Assistant Treasurer</span></li>
         </ol>
 
-        <p class="signature">General Secretary</p>
+        <p class="closing">
+            The Office Bearers will represent our organization and interact with the problems of LIC Retirees/Pensioners with the Divisional Management.
+        </p>
+
+        <div class="sign-off">
+            <p>With regards,</p>
+            <p>Thanking You Sir,</p>
+            <div class="signature-space"></div>
+            <p>General Secretary</p>
+        </div>
     </div>
 </body>
 </html>
